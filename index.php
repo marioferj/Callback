@@ -19,8 +19,9 @@ try
     $json = json_decode($json);
     $clave = str_replace('"','',json_encode($json->clave));
     $archivo = "./$clave.json";
-    file_put_contents($archivo, json_encode($json));
-    header("HTTP/1.1 200 OK");
+    file_put_contents($archivo, json_encode($json));   
+    //http_response_code(200);
+    header("HTTP/1.1 200 OK");    
 }
 catch (Exception  $e)
 {
